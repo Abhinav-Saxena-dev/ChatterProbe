@@ -6,6 +6,8 @@ const SearchBar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(input);
+    const res = await fetch(`http://localhost:3000/api/search?query=${encodeURIComponent(input)}`);
+    console.log(res.json());
   };
 
   const handleChange = (e) => {
