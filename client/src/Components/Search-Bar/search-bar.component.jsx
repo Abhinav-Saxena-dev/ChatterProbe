@@ -1,13 +1,16 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 const SearchBar = () => {
   const [input, setInput] = useState("");
+  const [data, setData] = useState("null");
+
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(input);
-    const res = await fetch(`http://localhost:3000/api/search?query=${encodeURIComponent(input)}`);
-    console.log(res.json());
+    router.push(`/result/${encodeURIComponent(input)}`)
   };
 
   const handleChange = (e) => {
