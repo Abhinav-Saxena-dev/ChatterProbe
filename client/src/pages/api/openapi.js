@@ -1,13 +1,12 @@
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.OPEN_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
 const handler = async (req, res) => {
   try {
-
     const { prompt = "hello" } = req.body;
     if (!prompt) {
       return res.status(400).json({ error: "Prompt missing" });
@@ -20,7 +19,7 @@ const handler = async (req, res) => {
     const completion = await openai.createChatCompletion({
         model:"gpt-3.5-turbo",
         messages:[
-              {role : "user", content : "Hello ChatGPT"},
+              {role : "user", content : prompt},
           ]
     });
     res.status(200).json(completion.data.choices);
