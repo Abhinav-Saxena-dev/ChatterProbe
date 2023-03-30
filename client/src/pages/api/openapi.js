@@ -7,20 +7,15 @@ const openai = new OpenAIApi(configuration);
 
 const handler = async (req, res) => {
   try {
-    const { prompt = "hello" } = req.body;
-    if (!prompt) {
+    const { chat } = req.body;
+    console.log(chat);
+    if (!chat) {
       return res.status(400).json({ error: "Prompt missing" });
-    }
-
-    if (prompt.length > 100) {
-      return res.status(400).json({ error: "Prompt too long" });
     }
 
     const completion = await openai.createChatCompletion({
         model:"gpt-3.5-turbo",
-        messages:[
-              {role : "user", content : prompt},
-          ]
+        messages: chat
     });
     res.status(200).json(completion.data.choices);
   } catch (err) {

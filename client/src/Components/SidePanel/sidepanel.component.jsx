@@ -13,24 +13,30 @@ const SidePanel = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
+    const currentChat = [...chat, { "role": "user", "content": prompt }];
+    console.log(currentChat);
+    await setChat(chat => [...chat, {
+      "role" : "user",
+      "content" : prompt
+    }])
     try{
-      const response = await axios.post("http://localhost:3000/api/openapi", {prompt})
+      const response = await axios.post("http://localhost:3000/api/openapi", {chat : currentChat})
       console.log(response);
-      setChat([...chat, {
-        role : "assistant",
-        message : response.data[0].message.content
+      setChat(chat => [...chat, {
+        "role" : "assistant",
+        "content" : response.data[0].message.content
       }])
+      setPrompt("")
     }catch(error){
       console.log(error);
+      setChat(prev => prev.filter(data => data != prompt))
+    }finally {
       setLoading(false)
     }
   };
 
   useEffect(() => {
     console.log(chat)
-    if(loading){
-      setLoading(false)
-    }
   }, [chat])
 
   return (
@@ -39,15 +45,16 @@ const SidePanel = () => {
         <h1 className="text-2xl">Probing Ground</h1>
       </div>
       <div className="h-[75%] border border-black overflow-y-auto">
-        <div className="w-full border border-black p-3">
+        <div className="w-full p-3">
           {
-            loading ? <h1>Loading</h1>
-            :
             chat.map(data => (
               <div className="mb-5">
-                <span>{data.message}</span>
+                <span>{data.content}</span>
               </div>
             ))
+          }
+          {
+          loading ? <h1>Loading</h1> : null
           }
         </div>
       </div>
