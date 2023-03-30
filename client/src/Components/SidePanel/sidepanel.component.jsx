@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const SidePanel = () => {
+const SidePanel = ({title}) => {
   const [prompt, setPrompt] = useState("");
   const [chat, setChat] = useState([])
   const [loading, setLoading] = useState(false)
@@ -20,17 +20,17 @@ const SidePanel = () => {
       "content" : prompt
     }])
     try{
-      const response = await axios.post("http://localhost:3000/api/openapi", {chat : currentChat})
+      const response = await axios.post("http://localhost:3000/api/openapi", {chat : currentChat, title : title})
       console.log(response);
       setChat(chat => [...chat, {
         "role" : "assistant",
         "content" : response.data[0].message.content
       }])
-      setPrompt("")
     }catch(error){
       console.log(error);
       setChat(prev => prev.filter(data => data != prompt))
     }finally {
+      setPrompt("")
       setLoading(false)
     }
   };
@@ -40,11 +40,11 @@ const SidePanel = () => {
   }, [chat])
 
   return (
-    <div className="w-[25%] border border-gray-400 fixed h-screen flex justify-between flex-col">
+    <div className="w-[25%] right-10 top-10 bg-[#ffffff] rounded-md shadow-sm shadow-[#ffffff94] fixed h-[94vh] flex justify-between flex-col">
       <div className="flex justify-center items-center h-[10%]">
         <h1 className="text-2xl">Probing Ground</h1>
       </div>
-      <div className="h-[75%] border border-black overflow-y-auto">
+      <div className="h-[75%] overflow-y-auto">
         <div className="w-full p-3">
           {
             chat.map(data => (
@@ -58,20 +58,20 @@ const SidePanel = () => {
           }
         </div>
       </div>
-      <div className="h-[15%] border border-t-black">
+      <div className="h-[15%]">
         <form
-          className="h-full w-full flex justify-around items-center"
+          className="h-full w-full flex justify-center items-center"
           onSubmit={handleSubmit}
         >
           <span
-            className="border border-black w-[80%] ml-1 overflow-y-auto max-h-32 px-2"
+            className="border border-black rounded-md w-[80%] ml-1 overflow-y-auto max-h-32 px-2 py-1"
             onInput={handleChange}
             role="textbox"
             contentEditable={true}
           ></span>
           <input
             type="submit"
-            className="border border-black cursor-pointer p-1 rounded-md"
+            className="border ml-4 border-black cursor-pointer p-1 rounded-md"
             value={"Send"}
           />
         </form>

@@ -8,18 +8,17 @@ const Preview = () => {
   const {title} = router.query;
 
   return (
-    <div className="flex justify-between">
-        <SidePanel/>
-      <div className="container w-full md:max-w-3xl mx-auto pt-20">
+    <div className="flex justify-between bg-[#000000ee]">
+      <div className="w-[55vw] m-10 ml-60 rounded-lg shadow-md shadow-[#dcdcdc] pt-20 bg-white">
         <div className="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
           <div className="font-sans">
             <p className="text-base md:text-sm text-green-500 font-bold">
               &lt;{" "}
               <a
-                href="#"
-                className="text-base md:text-sm text-green-500 font-bold no-underline hover:underline"
+                onClick={() => router.back()}
+                className="text-base md:text-sm text-green-500 cursor-pointer font-bold no-underline hover:underline"
               >
-                BACK TO BLOG
+                Go back
               </a>
             </p>
             <h1 className="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">
@@ -104,6 +103,7 @@ const Preview = () => {
           </blockquote>
         </div>
       </div>
+      <SidePanel title = {title}/>
     </div>
   );
 };
