@@ -16,9 +16,9 @@ Overall, this application provides a seamless and user-friendly experience for t
 ## Technologies Used <a name = "techs_used"></a>
 The application is build using Next.js and Tailwind.
 
-APIs such as SerpApi [https://www.npmjs.com/package/google-search-results-nodejs] and Open API [https://www.npmjs.com/package/openapi] have also been used.
+APIs such as [SerpAPI](https://www.npmjs.com/package/google-search-results-nodejs)  and [Open API](https://www.npmjs.com/package/openapi) have also been used.
 
-Typed.js [https://mattboldt.com/demos/typed-js/] has been used to enhance the visuals.
+[Typed.js](https://mattboldt.com/demos/typed-js/) has been used to enhance the visuals.
 
 ## Getting Started <a name = "getting_started"></a>
 First, run the development server:
