@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ['<i>Research</i> made easy.', '<b>ChatterProbe</b> : the new meta to discovery'],
+      strings: ['<i>Research</i> made easy.', '<b>ChatterProbe</b> : The new meta for discovery'],
       typeSpeed: 50,
       backDelay : 3000,
       backSpeed : 50,
