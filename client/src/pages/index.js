@@ -13,7 +13,7 @@ const Home = () => {
     const typed = new Typed(el.current, {
       strings: ['<i>Research</i> made easy.', '<b>ChatterProbe</b> : The new meta for discovery'],
       typeSpeed: 50,
-      backDelay : 3000,
+      backDelay : 1500,
       backSpeed : 50,
     });
 
@@ -30,6 +30,9 @@ const Home = () => {
       <span ref={el} />
       </div>
       <SearchBar/>
+      <div className={`fixed bottom-8 text-white text-2xl ${comfortaa.className}`}>
+        Made by <a href = "https://abhinav-saxena-dev.netlify.app/" target={'_blank'} className='underline hover:text-purple-600'>Abhinav Saxena</a>
+      </div>
     </div>
   )
 }

@@ -29,31 +29,19 @@ const Preview = () => {
             </p>
           </div>
           <p className="py-6">
-            👋 Welcome fellow{" "}
-            <a
-              className="text-green-500 no-underline hover:underline"
-              href="https://www.tailwindcss.com"
-            >
-              Tailwind CSS
-            </a>{" "}
-            and miminal monochrome blog fan. This starter template provides a
-            starting point to create your own minimal monochrome blog using
-            Tailwind CSS and vanilla Javascript.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in neque sit amet dolor vulputate tempor. Vestibulum felis massa, lacinia ac mattis eget, vulputate eget risus. Mauris vitae quam est. Etiam vitae accumsan lorem. Integer ultrices nibh felis, ac tempus ante rutrum a. Pellentesque maximus urna quam, id blandit justo tempus ac.
           </p>
 
           <p className="py-6">
-            The basic blog page layout is available and all using the default
-            Tailwind CSS classNamees (although there are a few hardcoded style
-            tags). If you are going to use this in your project, you will want
-            to convert the classNamees into components.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in neque sit amet dolor vulputate tempor. Vestibulum felis massa, lacinia ac mattis eget, vulputate eget risus. Mauris vitae quam est. Etiam vitae accumsan lorem. Integer ultrices nibh felis, ac tempus ante rutrum a. Pellentesque maximus urna quam, id blandit justo tempus ac.
           </p>
 
-          <h1 className="py-2 font-sans">Heading 1</h1>
-          <h2 className="py-2 font-sans">Heading 2</h2>
-          <h3 className="py-2 font-sans">Heading 3</h3>
-          <h4 className="py-2 font-sans">Heading 4</h4>
-          <h5 className="py-2 font-sans">Heading 5</h5>
-          <h6 className="py-2 font-sans">Heading 6</h6>
+          <h1 className="py-2 font-sans">Point 1</h1>
+          <h2 className="py-2 font-sans">Point 2</h2>
+          <h3 className="py-2 font-sans">Point 3</h3>
+          <h4 className="py-2 font-sans">Point 4</h4>
+          <h5 className="py-2 font-sans">Point 5</h5>
+          <h6 className="py-2 font-sans">Point 6</h6>
 
           <p className="py-6">
             Sed dignissim lectus ut tincidunt vulputate. Fusce tincidunt lacus

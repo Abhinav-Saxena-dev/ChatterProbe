@@ -12,7 +12,7 @@ const Result = () => {
       const { query } = router.query;
       setLoading(true);
       const res = await fetch(
-        `http://localhost:3000/api/search?query=${encodeURIComponent(query)}`
+        `/api/search?query=${encodeURIComponent(query)}`
       );
       const data = await res.json();
       setQueryResult(data.data);
@@ -60,7 +60,10 @@ const Result = () => {
           </svg>
         </button>
       </div>
-      <div className="p-5 grid grid-cols-4 gap-6">
+      <div className="text-white text-5xl w-[99vw] flex justify-center">
+        Results
+      </div>
+      <div className="p-5 mt-3 grid grid-cols-4 gap-6">
         {isLoading ? (
           <Loading />
         ) : (

@@ -21,7 +21,7 @@ const SidePanel = ({title}) => {
       "content" : prompt
     }])
     try{
-      const response = await axios.post("http://localhost:3000/api/openapi", {chat : currentChat, title : title})
+      const response = await axios.post("/api/openapi", {chat : currentChat, title : title})
       console.log(response);
       setChat(chat => [...chat, {
         "role" : "assistant",
