@@ -8,9 +8,6 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-
-
-
 const handler = async (req, res) => {
   try {
     const { chat, title } = req.body;
