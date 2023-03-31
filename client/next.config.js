@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   env : {
-    API_KEY : process.env.OPEN_API_KEY
+    OPEN_API_KEY : process.env.OPEN_API_KEY
   }
 }
 

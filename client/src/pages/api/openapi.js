@@ -1,7 +1,8 @@
 import { Configuration, OpenAIApi } from "openai";
 import { config } from "dotenv";
 
-config()
+config({path : "./../../../.env.local"})
+
 
 const configuration = new Configuration({
   apiKey: process.env.OPEN_API_KEY,
