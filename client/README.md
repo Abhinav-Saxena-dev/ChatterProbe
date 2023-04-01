@@ -59,11 +59,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Issues <a name = "issues"></a>
 
-1. The open API exits with status code 401 on live server, however on localHost there is no such issue. The issue was resolved when committed my .env file to github. (Solved : Added environmental variables to netlify)
+1. Netlify has a 10 second request execution limit. It cannot be changed and thus sometimes the open AI function exits with code 502.
 
-2. Netlify has a 10 second request execution limit. It cannot be changed and thus sometimes the open AI function exits with code 502.
-
-3. The Serp API has no option for scraping the content of a research paper, so we are using demo text to populate the preview page. However, the questions can be asked and the model will reply with reference to the research paper.
+2. The Serp API has no option for scraping the content of a research paper, so we are using demo text to populate the preview page. However, the questions can be asked and the model will reply with reference to the research paper.
 
 ## To do <a name = "to-do"></a>
 
