@@ -44,6 +44,8 @@ Dynamic Routing is used for the results on searching for research paper topic.
 
 2. The Serp API has no option for scraping the content of a research paper, so we are using demo text to populate the preview page. However, the questions can be asked and the model will reply with reference to the research paper.
 
+3. OpenAI api credits have expired. So the response from the gpt api is exiting with status code 429.
+
 ## To do <a name = "to-do"></a>
 
 1. Add pagination to result page.
