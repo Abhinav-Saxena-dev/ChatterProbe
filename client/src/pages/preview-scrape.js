@@ -15,7 +15,7 @@ const Preview = () => {
   useEffect(() => {
     const getData = async () => {
       try{
-      const data = await axios.get(`http://0.0.0.0:8080/scrape?url=${link}`);
+      const data = await axios.get(`https://chatter-probe-scrapper.onrender.com/scrape?url=${link}`);
       console.log("====================================");
       console.log(data);
       console.log("====================================");
