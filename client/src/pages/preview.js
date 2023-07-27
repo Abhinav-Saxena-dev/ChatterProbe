@@ -1,5 +1,7 @@
 import SidePanel from "@/Components/SidePanel/sidepanel.component";
+import axios from "axios";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Preview = () => {
 

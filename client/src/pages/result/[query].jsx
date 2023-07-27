@@ -63,6 +63,7 @@ const Result = () => {
       <div className="text-white text-5xl w-[99vw] flex justify-center">
         Results
       </div>
+      <h1 className="text-gray-400 text-2xl w-[99vw] flex justify-center">Please note that some documents cannot be scrapped. In such a case pick another and try again.</h1>
       <div className="p-5 mt-3 grid grid-cols-4 gap-6">
         {isLoading ? (
           <Loading />

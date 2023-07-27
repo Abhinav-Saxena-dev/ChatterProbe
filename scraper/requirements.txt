@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+selenium
+fake_useragent
+html2text
+beautifulsoup4
