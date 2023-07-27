@@ -103,7 +103,7 @@ const Preview = () => {
         )}
       </div>
     </div>
-    <SidePanel title={"hello"} />
+    <SidePanel title={title} />
   </div>)
     
     
