@@ -1,5 +1,5 @@
 fastapi
-uvicorn
+gunicorn
 selenium
 fake_useragent
 html2text
