@@ -47,6 +47,7 @@ const SidePanel = ({title}) => {
       </div>
       <div className="h-[75%] overflow-y-auto">
         <div className="w-full p-3">
+          <ChatTag data = {{role : "assistant", data : "Please not that if chatGPT takes more than 10 seconds to response, then netlify will reject the request. To start, you can ask about the paper in 50 words."}} />
           {
             chat.map(data => (
               <ChatTag data = {data}/>
