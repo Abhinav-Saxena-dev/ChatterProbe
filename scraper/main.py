@@ -16,6 +16,10 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
+@app.get('/')
+async def hello():
+    JSONResponse(status_code=200, content={'msg':"hello"})
+
 @app.get('/scrape')
 async def scrape(url: str):
     if not url:
