@@ -10,9 +10,9 @@ RUN apt-get update && \
     wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     dpkg -i google-chrome-stable_current_amd64.deb || apt-get install -yf && \
     rm google-chrome-stable_current_amd64.deb && \
-    wget -q https://chromedriver.storage.googleapis.com/$(wget -qO- https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip && \
-    unzip chromedriver_linux64.zip -d /usr/local/bin && \
-    rm chromedriver_linux64.zip && \
+    wget -q https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/116.0.5845.96/linux64/chromedriver-linux64.zip && \
+    unzip chromedriver-linux64.zip -d /usr/local/bin && \
+    rm chromedriver-linux64.zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
